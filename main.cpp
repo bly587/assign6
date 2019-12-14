@@ -4,7 +4,6 @@
 #include <ctime>
 
 //used this reference for time
-//https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c
 
 using namespace std;
 
@@ -136,6 +135,7 @@ void insertionSort(int myArray[], int size)
 void printArray(int myArray[], int size)
 {
   cout << "The array sorted is: " << endl;
+  //iterate through array and print
   for(int i = 0; i < size; ++i)
   {
     cout << myArray[i] << endl;
@@ -146,6 +146,7 @@ void printArray(int myArray[], int size)
 int main(int argc, char const *argv[])
 {
   string filename;
+  //if filename is not entered then remind user
   if(argc != 2)
   {
     cout << "Please enter a file" << endl;
@@ -155,7 +156,6 @@ int main(int argc, char const *argv[])
     filename = argv[1];
     //cout << "The filename is: " << filename << endl;
   }
-  //int myArray;
   //read in from file
   int counter = 0;
   int lineCount = 0;
@@ -208,10 +208,6 @@ int main(int argc, char const *argv[])
   std::time_t end_time = std::chrono::system_clock::to_time_t(end);
 
   cout << "Quick Sort finished at: " << ctime(&end_time) << "elapsed time: " << elapsed_seconds.count() << "s\n";
-  //print out array
-  // // printArray(myArray, size);
-  // printArray(myArray2, size);
-  // printArray(myArray1, size);
 
 
   return 0;
